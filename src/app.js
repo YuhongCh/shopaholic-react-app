@@ -1,6 +1,6 @@
-import SignIn from "./login/SignIn";
-import SignUp from "./signup/SignUp";
-import useToken from "./login/useToken";
+import SignIn from "./component/SignIn";
+import SignUp from "./component/SignUp";
+import useToken from "./hook/useToken";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
