@@ -1,6 +1,7 @@
-import SignIn from "./component/SignIn";
-import SignUp from "./component/SignUp";
-import useToken from "./hook/useToken";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+import ProductDetail from "./ProductDetail";
+import useToken from "../hook/useToken";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -8,11 +9,7 @@ function App() {
   const { token, setToken } = useToken();
 
   if (token) {
-    return (
-      <div>
-        Home Page
-      </div>
-    )
+    return <ProductDetail/>;
   }
 
   return (
@@ -24,6 +21,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp/>
+          </Route>
+          <Route path="/detail">
+            <ProductDetail />
           </Route>
         </Switch>
       </BrowserRouter>
