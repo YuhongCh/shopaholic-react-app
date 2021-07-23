@@ -13,6 +13,7 @@ import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState} from "react";
 import PropTypes from 'prop-types';
+import background from "../static/background.jpg";
 
 async function loginUser(credentials) {
   return await axios.post('http://localhost:8080/signin', credentials)
@@ -126,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://source.unsplash.com/random)',
+    backgroundImage: `url(${background})`,
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
