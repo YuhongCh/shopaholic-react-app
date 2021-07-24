@@ -12,14 +12,13 @@ export const SectionWrapper = styled.section`
 `
 
 // style for header
-
 export const HeaderWrapper = styled.header`
   min-height: 70px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   overflow: hidden;
-
+  
   .menu, .close{
     cursor: pointer;
     display: none;
@@ -65,6 +64,7 @@ export const HeaderLogoLink = styled(Link)`
 
 export const HeaderNavWrapper = styled.nav`
   display: flex;
+  
   ul li a:hover{
     color: darkgray;
   }
@@ -216,5 +216,11 @@ export const DetailTextWrapper = styled.div`
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
   margin: 10px 0;
+`
+
+// style for alert box
+export const AlertTextWrapper = styled.div`
+  font-family: '.AppleSystemUIFont', sans-serif;
+  -webkit-font-smoothing: antialiased;
 `
 

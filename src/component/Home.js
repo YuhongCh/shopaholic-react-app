@@ -5,7 +5,6 @@ import {
   SectionWrapper,ProductListWrapper,
 } from "./style";
 import background from "../static/background.jpg";
-import Header from "./Header";
 
 export class Home extends Component {
 
@@ -36,7 +35,6 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <Header/>
         <SectionWrapper>
           <ProductListWrapper>
             <ProductList products={this.state.products}/>
@@ -53,11 +51,11 @@ function ProductList({products}) {
       <CardWrapper key={product.id}>
         <CardImageWrapper src={background} alt=""/>
         <CardInfoWrapper>
-          <CardTitleLinkWrapper to="/detail">{product.title}</CardTitleLinkWrapper>
+          <CardTitleLinkWrapper to="/product/detail">{product.title}</CardTitleLinkWrapper>
           <CardTextWrapper>${product.price}</CardTextWrapper>
           <CardTextWrapper>{product.description}</CardTextWrapper>
         </CardInfoWrapper>
-        <CardDetailLinkWrapper to="/detail"> SEE DETAIL </CardDetailLinkWrapper>
+        <CardDetailLinkWrapper to="/product/detail"> SEE DETAIL </CardDetailLinkWrapper>
       </CardWrapper>
     ))
   )

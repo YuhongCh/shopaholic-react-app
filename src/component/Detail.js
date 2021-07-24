@@ -27,7 +27,6 @@ export class Detail extends Component {
   render() {
     return (
       <div>
-        <Header/>
         <SectionWrapper>
           <ProductDetailWrapper>
             <DetailImageWrapper src={background} alt=""/>
