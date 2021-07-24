@@ -27,6 +27,7 @@ export class Home extends Component {
         {id : 13, title: "POLESTAR 13", description: "A nice car", price: "0.01"},
         {id : 14, title: "POLESTAR 14", description: "A nice car", price: "0.01"},
         {id : 15, title: "POLESTAR 15", description: "A nice car", price: "0.01"},
+        {id : 16, title: "POLESTAR 16", description: "A nice car", price: "0.01"},
       ]
     }
   }

@@ -7,14 +7,18 @@ export const SectionWrapper = styled.section`
   padding: 15px 10px;
   max-width: 1200px;
   margin: 80px auto;
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
 `
 
 // style for home page
 export const ProductListWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-content: flex-start;
   flex-wrap: wrap;
+  
 `
 
 export const CardWrapper = styled.div`

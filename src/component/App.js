@@ -10,7 +10,6 @@ function App() {
   const { token, setToken } = useToken();
 
   return (
-    <div>
       <BrowserRouter>
         <Switch>
           <Route path="/signin" exact>
@@ -27,7 +26,6 @@ function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </div>
   );
 }
 
