@@ -158,7 +158,6 @@ export const CardDetailLinkWrapper = styled(Link)`
   text-align: center;
   width: 300px;
   margin-left: 10px;
-  height: 25px;
   padding-top: 15px;
   padding-bottom: 10px;
   font-size: 1em;
