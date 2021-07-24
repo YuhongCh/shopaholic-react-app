@@ -5,64 +5,8 @@ import { Link } from "react-router-dom";
 export const SectionWrapper = styled.section`
   box-shadow: 0 0 5px #ccc;
   padding: 15px 10px;
-  width: 1200px;
-  height: 480px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-`
-// style for detail page
-export const ProductDetailWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 50px 0;
-  box-sizing: border-box;
-`
-
-export const DetailImageWrapper = styled.img`
-  max-width: 500px;
-  min-width: 290px;
-  height: 300px;
-  display: block;
-  object-fit: cover;
-  margin: 25px;
-`
-
-export const DetailInfoWrapper = styled.div`
-  max-width: 500px;
-  min-width: 290px;
-  margin: 25px;
-`
-
-export const DetailTitleWrapper = styled.div`
-  display: block;
-  font-size: 1.5em;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  font-weight: bold;
-  box-sizing: border-box;
-  font-family:  'Segoe UI',serif;
-  letter-spacing: 1px;
-`
-
-export const DetailButtonWrapper = styled.button`
-  background: #333;
-  color: white;
-  text-decoration: none;
-  padding: 10px 35px;
-  margin-top: 30px;
-  display: inline-block;
-  font-family: 'Georgia', sans-serif;
-`
-
-export const DetailTextWrapper = styled.div`
-  box-sizing: border-box;
-  font-family: 'Georgia', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5;
-  margin: 10px 0;
+  max-width: 1200px;
+  margin: 80px auto;
 `
 
 // style for home page
@@ -71,7 +15,6 @@ export const ProductListWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 20px;
 `
 
 export const CardWrapper = styled.div`
@@ -142,3 +85,57 @@ export const CardDetailLinkWrapper = styled(Link)`
   display: inline-block;
   -webkit-font-smoothing: antialiased;
 `
+
+// style for detail page
+export const ProductDetailWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  box-sizing: border-box;
+`
+
+export const DetailImageWrapper = styled.img`
+  max-width: 500px;
+  min-width: 290px;
+  height: 300px;
+  display: block;
+  object-fit: cover;
+  margin: 25px;
+`
+
+export const DetailInfoWrapper = styled.div`
+  max-width: 500px;
+  min-width: 290px;
+  margin: 25px;
+`
+
+export const DetailTitleWrapper = styled.div`
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  font-weight: bold;
+  box-sizing: border-box;
+  font-family:  'Segoe UI',serif;
+  letter-spacing: 1px;
+`
+
+export const DetailButtonWrapper = styled.button`
+  background: #333;
+  color: white;
+  text-decoration: none;
+  padding: 10px 35px;
+  margin-top: 30px;
+  display: inline-block;
+  font-family: 'Georgia', sans-serif;
+`
+
+export const DetailTextWrapper = styled.div`
+  box-sizing: border-box;
+  font-family: 'Georgia', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  margin: 10px 0;
+`
+
