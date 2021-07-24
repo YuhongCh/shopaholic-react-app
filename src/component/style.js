@@ -6,9 +6,84 @@ export const SectionWrapper = styled.section`
   box-shadow: 0 0 5px #ccc;
   padding: 15px 10px;
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 0 auto;
   box-sizing: border-box;
   -moz-osx-font-smoothing: grayscale;
+`
+
+// style for header
+
+export const HeaderWrapper = styled.header`
+  min-height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+
+  .menu, .close{
+    cursor: pointer;
+    display: none;
+  }
+  
+  @media (max-width: 1000px){
+    ul{
+      position: fixed;
+      top:0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      background: white;
+      z-index: 99;
+      opacity: 0.97;
+      transition: 0.5s linear;
+      margin-left: -20px;
+    }
+    .menu, .close{
+      display: block;
+    }
+    .close{
+      position: relative;
+    }
+    ul.toggle{
+      left: 0;
+    }
+  }
+`
+
+export const HeaderLogoLink = styled(Link)`
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  display: block;
+`
+
+export const HeaderNavWrapper = styled.nav`
+  display: flex;
+  ul li a:hover{
+    color: darkgray;
+  }
+  ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #555;
+    padding: 0 15px;
+  }
+  ul li{
+    list-style: none;
+    display: inline-block;
+  }
+  ul li Link img{
+    cursor: pointer;
+    display: inline-block;
+    margin: auto;
+    padding-left: 5px;
+  }
 `
 
 // style for home page

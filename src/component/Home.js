@@ -5,6 +5,7 @@ import {
   SectionWrapper,ProductListWrapper,
 } from "./style";
 import background from "../static/background.jpg";
+import Header from "./Header";
 
 export class Home extends Component {
 
@@ -34,11 +35,14 @@ export class Home extends Component {
 
   render() {
     return (
-      <SectionWrapper>
-        <ProductListWrapper>
-          <ProductList products={this.state.products}/>
-        </ProductListWrapper>
-      </SectionWrapper>
+      <div>
+        <Header/>
+        <SectionWrapper>
+          <ProductListWrapper>
+            <ProductList products={this.state.products}/>
+          </ProductListWrapper>
+        </SectionWrapper>
+      </div>
     )
   }
 }

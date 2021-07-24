@@ -9,6 +9,7 @@ import {
   DetailTitleWrapper,
   DetailButtonWrapper
 } from "./style";
+import Header from "./Header";
 
 export class Detail extends Component {
 
@@ -25,17 +26,20 @@ export class Detail extends Component {
 
   render() {
     return (
-      <SectionWrapper>
-        <ProductDetailWrapper>
-          <DetailImageWrapper src={background} alt=""/>
-          <DetailInfoWrapper>
-            <DetailTitleWrapper>{this.state.title}</DetailTitleWrapper>
-            <DetailTextWrapper>{this.state.introduction}</DetailTextWrapper>
-            <DetailTextWrapper>{this.state.description}</DetailTextWrapper>
-            <DetailButtonWrapper onClick={() => alert("not available yet")}>SHOPAHOLIC</DetailButtonWrapper>
-          </DetailInfoWrapper>
-        </ProductDetailWrapper>
-      </SectionWrapper>
+      <div>
+        <Header/>
+        <SectionWrapper>
+          <ProductDetailWrapper>
+            <DetailImageWrapper src={background} alt=""/>
+            <DetailInfoWrapper>
+              <DetailTitleWrapper>{this.state.title}</DetailTitleWrapper>
+              <DetailTextWrapper>{this.state.introduction}</DetailTextWrapper>
+              <DetailTextWrapper>{this.state.description}</DetailTextWrapper>
+              <DetailButtonWrapper onClick={() => alert("not available yet")}>SHOPAHOLIC</DetailButtonWrapper>
+            </DetailInfoWrapper>
+          </ProductDetailWrapper>
+        </SectionWrapper>
+      </div>
     )
   }
 }

@@ -15,10 +15,10 @@ function App() {
           <Route path="/signin" exact>
             <SignIn setToken={setToken}/>
           </Route>
-          <Route path="/signup" exat>
+          <Route path="/signup" exact>
             <SignUp/>
           </Route>
-          <Route path="/detail" exat>
+          <Route path="/detail" exact>
             <Detail />
           </Route>
           <Route path="/list" exact>
