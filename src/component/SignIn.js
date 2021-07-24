@@ -12,18 +12,23 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState} from "react";
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import background from "../static/background.jpg";
+import useToken from "../hook/useToken";
 
 async function loginUser(credentials) {
   return await axios.post('http://localhost:8080/signin', credentials)
     .then(response => response.data.code === 0 ? response.data.data.value : null);
 }
 
-export default function SignIn({ setToken }) {
+export default function SignIn() {
+
+  const { token, setToken } = useToken();
 
   const [phone, setPhone] = useState(null);
   const [password, setPassword] = useState(null);
+  const [login, setLogin] = useState(false);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -31,10 +36,17 @@ export default function SignIn({ setToken }) {
       phone,
       password
     });
-    setToken(token);
+    if (token) {
+      setToken(token);
+      setLogin(true);
+    }
   }
 
   const classes = useStyles();
+
+  if (login) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <Grid container component="main" className={classes.root}>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import menuSvg from "../svg/menu.svg";
-import cartSvg from "../svg/cart.svg";
 import cartPng from "../svg/cart.png";
 import closeSvg from "../svg/close.svg";
 import {HeaderLogoLink, HeaderWrapper, HeaderNavWrapper, CartImageWrapper} from "./style";
@@ -23,7 +22,8 @@ export class Header extends Component {
   }
 
   setLogout = () => {
-    this.setState({logout: true})
+    this.setState({logout: true});
+    localStorage.removeItem('token');
   }
 
   render() {

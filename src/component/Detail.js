@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import background from "../static/background.jpg"
+import useToken from "../hook/useToken";
 import {
   DetailInfoWrapper,
   DetailImageWrapper,
@@ -9,38 +10,39 @@ import {
   DetailTitleWrapper,
   DetailButtonWrapper
 } from "./style";
+import {Redirect} from "react-router";
 import Header from "./Header";
 
-export class Detail extends Component {
+export default function Detail () {
 
-  constructor() {
-    super();
-    this.state = {
-      title: "POLESTAR 1",
-      introduction: "UI/UX designing, html css tutorials",
-      description: "Welcome to our channel Dev AT. Here you can learn web designing,\n" +
-        "UI/UX designing, html css tutorials, css animations and css effects,\n" +
-        "javascript and jquery tutorials and related so on."
-    }
+  const { token, setToken } = useToken();
+
+  if (token === null) {
+    return <Redirect to="/signin"/>;
   }
 
-  render() {
+  const state = {
+    title: "POLESTAR 1",
+    introduction: "UI/UX designing, html css tutorials",
+    description: "Welcome to our channel Dev AT. Here you can learn web designing,\n" +
+      "UI/UX designing, html css tutorials, css animations and css effects,\n" +
+      "javascript and jquery tutorials and related so on."
+  }
+
     return (
       <div>
+        <Header/>
         <SectionWrapper>
           <ProductDetailWrapper>
             <DetailImageWrapper src={background} alt=""/>
             <DetailInfoWrapper>
-              <DetailTitleWrapper>{this.state.title}</DetailTitleWrapper>
-              <DetailTextWrapper>{this.state.introduction}</DetailTextWrapper>
-              <DetailTextWrapper>{this.state.description}</DetailTextWrapper>
+              <DetailTitleWrapper>{state.title}</DetailTitleWrapper>
+              <DetailTextWrapper>{state.introduction}</DetailTextWrapper>
+              <DetailTextWrapper>{state.description}</DetailTextWrapper>
               <DetailButtonWrapper onClick={() => alert("not available yet")}>SHOPAHOLIC</DetailButtonWrapper>
             </DetailInfoWrapper>
           </ProductDetailWrapper>
         </SectionWrapper>
       </div>
     )
-  }
 }
-
-export default Detail;
