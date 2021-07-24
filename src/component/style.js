@@ -23,6 +23,13 @@ export const HeaderWrapper = styled.header`
     cursor: pointer;
     display: none;
   }
+
+  .hello {
+    display: inline-block;
+    padding: 10px 10px 15px 15px;
+    height: 20px;
+    margin-left: -50px;
+  }
   
   @media (max-width: 1000px){
     ul{
@@ -60,10 +67,12 @@ export const HeaderLogoLink = styled(Link)`
   text-transform: uppercase;
   color: black;
   display: block;
+  padding-left: 30px;
 `
 
 export const HeaderNavWrapper = styled.nav`
   display: flex;
+  padding-right: -100px;
   
   ul li a:hover{
     color: darkgray;
@@ -77,12 +86,6 @@ export const HeaderNavWrapper = styled.nav`
   ul li{
     list-style: none;
     display: inline-block;
-  }
-  ul li Link img{
-    cursor: pointer;
-    display: inline-block;
-    margin: auto;
-    padding-left: 5px;
   }
 `
 
@@ -223,4 +226,3 @@ export const AlertTextWrapper = styled.div`
   font-family: '.AppleSystemUIFont', sans-serif;
   -webkit-font-smoothing: antialiased;
 `
-

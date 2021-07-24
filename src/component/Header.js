@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import menuSvg from "../svg/menu.svg";
 import cartSvg from "../svg/cart.svg";
+import cartPng from "../svg/cart.png";
 import closeSvg from "../svg/close.svg";
-import {HeaderLogoLink, HeaderWrapper, HeaderNavWrapper} from "./style";
+import {HeaderLogoLink, HeaderWrapper, HeaderNavWrapper, CartImageWrapper} from "./style";
 import { Redirect } from "react-router-dom";
 import SignoutAlert from "./SignoutAlert";
 
@@ -45,14 +46,14 @@ export class Header extends Component {
             <li><Link to="/product">Contact</Link></li>
             <li><Link to="/product">About</Link></li>
             <li><SignoutAlert setLogout={this.setLogout}/></li>
-            <li>
-              <Link to="/cart"><img src={cartSvg} alt="" width="21"/></Link>
-            </li>
             <li className="close" onClick={this.menuToggle}>
               <img src={closeSvg} alt="" width="20"/>
             </li>
           </ul>
         </HeaderNavWrapper>
+        <Link to="/cart">
+          <img className="hello" src={cartPng} alt="" width="21" />
+        </Link>
       </HeaderWrapper>
     )
   }
