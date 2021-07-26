@@ -47,7 +47,7 @@ export const HeaderWrapper = styled.header`
       z-index: 99;
       opacity: 0.97;
       transition: 0.5s linear;
-      background: red;
+      padding-top: -40px;
     }
     .menu, .close{
       display: block;

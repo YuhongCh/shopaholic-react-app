@@ -42,7 +42,6 @@ export class Header extends Component {
         <HeaderNavWrapper>
           <ul className={toggle ? "toggle" : ""}>
             <li><Link to="/product">Home</Link></li>
-            <li><Link to="/product">Contact</Link></li>
             <li><Link to="/product">About</Link></li>
             <li>
               <SignoutAlert setLogout={this.setLogout}/>
