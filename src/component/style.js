@@ -271,7 +271,7 @@ export const CartPaymentWrapper = styled.button`
   display: inline-block;
 `
 
-export const CardTableWrapper = styled.div`
+export const CartTableWrapper = styled.div`
   display: block;
   box-sizing: border-box;
   font-family: 'Georgia', sans-serif;
@@ -295,7 +295,7 @@ export const CardTableWrapper = styled.div`
   }
   table {
     width: 90%;
-    min-width: 440px;
+    min-width: 400px;
     color: rgba(0,0,0,.815);
     margin-right: auto;
     margin-left: auto;

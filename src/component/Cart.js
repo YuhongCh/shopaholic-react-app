@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from "./Header";
 import {
-  CardTableWrapper, CartPaymentWrapper, CartTitleHeaderWrapper, CartTitleWrapper,
+  CartTableWrapper, CartPaymentWrapper, CartTitleHeaderWrapper, CartTitleWrapper,
   SectionWrapper
 } from "./style";
 
@@ -23,14 +23,13 @@ export default function Cart() {
             <span> 4 items</span>
           </div>
         </CartTitleHeaderWrapper>
-        <CardTableWrapper>
+        <CartTableWrapper>
           <table>
             <thead>
             <tr>
               <th>Product</th>
               <th>Price</th>
               <th className="broader">Quantity</th>
-              <th>Total</th>
             </tr>
             </thead>
             <tbody>
@@ -38,41 +37,35 @@ export default function Cart() {
               <td className="flex"><strong>POLESTAR 1</strong></td>
               <td>$100</td>
               <td>1</td>
-              <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
               <td>$100</td>
               <td>1</td>
-              <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
               <td>$100</td>
               <td>1</td>
-              <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
               <td>$100</td>
               <td>1</td>
-              <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
               <td>$100</td>
               <td>1</td>
-              <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td></td>
-              <td></td>
-              <td></td>
+              <td><strong>Total: $500</strong></td>
               <td><CartPaymentWrapper> PAYMENT </CartPaymentWrapper></td>
             </tr>
             </tbody>
           </table>
-        </CardTableWrapper>
+        </CartTableWrapper>
       </SectionWrapper>
     </div>
   )
