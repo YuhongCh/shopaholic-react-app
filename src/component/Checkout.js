@@ -14,7 +14,7 @@ import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 import Header from "./Header";
-import {CheckoutButtonLink} from "./style";
+import {CheckoutButtonLink, CheckoutHeaderWrapper} from "./style";
 
 function Copyright() {
   return (
@@ -101,11 +101,9 @@ export default function Checkout() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="absolute" color="default" className={classes.appBar}>
-        <Toolbar>
-          <Header />
-        </Toolbar>
-      </AppBar>
+      <CheckoutHeaderWrapper>
+        <Header/>
+      </CheckoutHeaderWrapper>
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">

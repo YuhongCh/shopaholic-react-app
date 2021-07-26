@@ -332,3 +332,14 @@ export const CheckoutButtonLink = styled(Link)`
   display: inline-block;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `
+
+export const CheckoutHeaderWrapper = styled.div`
+  ul {
+    margin-left: 0;
+  }
+  
+  .menu {
+    margin-left: -10px;
+    margin-right: -50px;
+  }
+`
