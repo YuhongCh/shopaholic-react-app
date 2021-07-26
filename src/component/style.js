@@ -35,7 +35,7 @@ export const HeaderWrapper = styled.header`
     ul{
       position: absolute;
       top:-140%;
-      left: -80px;
+      left: -50px;
       width: 110%;
       height: 90vh;
       display: flex;
