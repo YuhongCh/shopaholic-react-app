@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //general layout for shopaholic
 export const SectionWrapper = styled.section`
   box-shadow: 0 0 5px #ccc;
-  padding: 15px 10px;
+  padding: 15px 15px;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -20,6 +20,7 @@ export const HeaderWrapper = styled.header`
   overflow: hidden;
   
   .menu, .close{
+    
     cursor: pointer;
     display: none;
   }
@@ -34,8 +35,8 @@ export const HeaderWrapper = styled.header`
   @media (max-width: 1000px){
     ul{
       position: fixed;
-      top:0;
-      left: -100%;
+      top:-100%;
+      left: 0;
       width: 100%;
       height: 100vh;
       display: flex;
@@ -55,7 +56,7 @@ export const HeaderWrapper = styled.header`
       position: relative;
     }
     ul.toggle{
-      left: -30px;
+      top: 0;
       margin-top: -30px;
     }
   }
