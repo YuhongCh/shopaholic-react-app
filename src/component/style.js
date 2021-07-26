@@ -257,7 +257,7 @@ export const CartTitleWrapper = styled.span`
   font-size: 50px;
   opacity: .8;
   margin-right: 15px;
-  margin-left: 20px;
+  margin-left: -20px;
   margin-outside: 10px;
 `
 
