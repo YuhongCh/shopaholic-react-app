@@ -162,7 +162,7 @@ export const CardTitleLinkWrapper = styled(Link)`
 `
 
 export const CardDetailLinkWrapper = styled(Link)`
-  background:  #333;
+  background: #455a64;
   text-align: center;
   width: 300px;
   margin-left: 10px;
@@ -211,7 +211,7 @@ export const DetailTitleWrapper = styled.div`
 `
 
 export const DetailButtonWrapper = styled.button`
-  background: #333;
+  background: #455a64;
   color: white;
   text-decoration: none;
   padding: 10px 35px;
@@ -262,8 +262,8 @@ export const CartTitleWrapper = styled.span`
   margin-outside: 10px;
 `
 
-export const CartPaymentWrapper = styled.button`
-  background: #333;
+export const CartPaymentWrapper = styled(Link)`
+  background: #455a64;
   color: white;
   text-decoration: none;
   padding: 10px 35px;
@@ -321,4 +321,14 @@ export const CartTableWrapper = styled.div`
     box-sizing: border-box;
     border-collapse: collapse;
   }
+`
+
+export const CheckoutButtonLink = styled(Link)`
+  background: #455a64;
+  color: white;
+  text-decoration: none;
+  padding: 10px 35px;
+  margin-top: 20px;
+  display: inline-block;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 `

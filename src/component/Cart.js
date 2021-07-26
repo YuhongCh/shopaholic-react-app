@@ -4,6 +4,7 @@ import {
   CartTableWrapper, CartPaymentWrapper, CartTitleHeaderWrapper, CartTitleWrapper,
   SectionWrapper
 } from "./style";
+import Checkout from "./Checkout";
 
 export default function Cart() {
 
@@ -61,7 +62,7 @@ export default function Cart() {
             <tr>
               <td></td>
               <td><strong>Total: $500</strong></td>
-              <td><CartPaymentWrapper> PAYMENT </CartPaymentWrapper></td>
+              <td><CartPaymentWrapper to="/checkout"> PAYMENT </CartPaymentWrapper></td>
             </tr>
             </tbody>
           </table>

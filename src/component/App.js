@@ -2,10 +2,10 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import Detail from "./Detail";
 import Home from "./Home";
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import {BrowserRouter} from "react-router-dom";
 import Cart from "./Cart";
-
+import Checkout from "./Checkout";
 
 function App() {
 
@@ -29,6 +29,9 @@ function App() {
           </Route>
           <Route path="/cart" exact>
             <Cart />
+          </Route>
+          <Route path="/checkout">
+            <Checkout/>
           </Route>
           <Route path="/">
             <Home/>
