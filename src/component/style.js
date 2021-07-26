@@ -259,9 +259,7 @@ export const CartPaymentWrapper = styled.button`
   padding: 10px 35px;
   font-family: 'Georgia', sans-serif;
   alignment: center;
-  position: relative;
   display: inline-block;
-  margin-left: 570px;
 `
 
 export const CardTableWrapper = styled.div`

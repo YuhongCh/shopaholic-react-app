@@ -64,10 +64,15 @@ export default function Cart() {
               <td>1</td>
               <td><strong>$100</strong></td>
             </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><CartPaymentWrapper> PAYMENT </CartPaymentWrapper></td>
+            </tr>
             </tbody>
           </table>
         </CardTableWrapper>
-        <CartPaymentWrapper> PAYMENT </CartPaymentWrapper>
       </SectionWrapper>
     </div>
   )
