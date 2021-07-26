@@ -248,6 +248,7 @@ export const CartTitleHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  margin-left: 30px;
   align-items: baseline;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
