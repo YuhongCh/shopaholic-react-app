@@ -20,7 +20,6 @@ export const HeaderWrapper = styled.header`
   overflow: hidden;
   
   .menu, .close{
-    
     cursor: pointer;
     display: none;
   }
@@ -31,14 +30,14 @@ export const HeaderWrapper = styled.header`
     height: 20px;
     margin-left: -50px;
   }
-  
+
   @media (max-width: 1000px){
     ul{
-      position: fixed;
+      position: absolute;
       top:-140%;
-      left: -30px;
+      left: -50px;
       width: 100%;
-      height: 110vh;
+      height: 90vh;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
@@ -48,6 +47,7 @@ export const HeaderWrapper = styled.header`
       opacity: 0.97;
       transition: 0.5s linear;
       padding-top: -40px;
+      margin-bottom: 30px;
     }
     .menu, .close{
       display: block;
