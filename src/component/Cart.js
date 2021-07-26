@@ -35,27 +35,27 @@ export default function Cart() {
             </thead>
             <tbody>
             <tr>
-              <td className="flex"><strong>POLESTAR 1</strong></td>
+              <td className="flex"><strong>POLESTAR 911S </strong></td>
               <td>$100</td>
               <td>1</td>
             </tr>
             <tr>
-              <td className="flex"><strong>POLESTAR 1</strong></td>
+              <td className="flex"><strong>POLESTAR 911S </strong></td>
               <td>$100</td>
               <td>1</td>
             </tr>
             <tr>
-              <td className="flex"><strong>POLESTAR 1</strong></td>
+              <td className="flex"><strong>POLESTAR 911S </strong></td>
               <td>$100</td>
               <td>1</td>
             </tr>
             <tr>
-              <td className="flex"><strong>POLESTAR 1</strong></td>
+              <td className="flex"><strong>POLESTAR 911S </strong></td>
               <td>$100</td>
               <td>1</td>
             </tr>
             <tr>
-              <td className="flex"><strong>POLESTAR 1</strong></td>
+              <td className="flex"><strong>POLESTAR 911S </strong></td>
               <td>$100</td>
               <td>1</td>
             </tr>

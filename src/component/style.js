@@ -278,7 +278,7 @@ export const CartTableWrapper = styled.div`
   font-family: 'Georgia', sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0 -20px;
-
+  
   .broader {
     padding-left: 20px;
   }
