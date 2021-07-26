@@ -68,7 +68,7 @@ export const HeaderLogoLink = styled(Link)`
   text-transform: uppercase;
   color: black;
   display: block;
-  padding-left: 30px;
+  padding-left: 10px;
 `
 
 export const HeaderNavWrapper = styled.nav`
