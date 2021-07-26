@@ -38,7 +38,7 @@ export const HeaderWrapper = styled.header`
       top:-120%;
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: 110vh;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
@@ -47,8 +47,6 @@ export const HeaderWrapper = styled.header`
       z-index: 99;
       opacity: 0.97;
       transition: 0.5s linear;
-      margin-left: -40px;
-      margin-bottom: 20px;
     }
     .menu, .close{
       display: block;
@@ -58,7 +56,7 @@ export const HeaderWrapper = styled.header`
     }
     ul.toggle{
       top: 0;
-      margin-top: -30px;
+      margin-top: -10px;
     }
   }
 `

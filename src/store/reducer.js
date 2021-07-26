@@ -2,10 +2,10 @@ import * as actionTypes from './actionTypes';
 import { fromJS } from "immutable";
 
 const defaultState = fromJS({
-  topicList: [],
-  articleList: [],
-  recommendList: [],
-  showScroll: false
+  productList: [],
+  shoppingCartList: [],
+  orderHistory: [],
+  cookie: null
 })
 
 function applicationReducer (state = defaultState, action) {
