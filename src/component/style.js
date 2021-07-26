@@ -275,6 +275,10 @@ export const CardTableWrapper = styled.div`
   font-family: 'Georgia', sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0 -20px;
+
+  .broader {
+    padding-left: 20px;
+  }
   
   table thead tr {
     margin-left: 20px;
@@ -289,7 +293,7 @@ export const CardTableWrapper = styled.div`
   }
   table {
     width: 90%;
-    min-width: 700px;
+    min-width: 440px;
     color: rgba(0,0,0,.815);
     margin-right: auto;
     margin-left: auto;

@@ -29,36 +29,43 @@ export default function Cart() {
             <tr>
               <th>Product</th>
               <th>Price</th>
+              <th className="broader">Quantity</th>
               <th>Total</th>
             </tr>
             </thead>
             <tbody>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
-              <td><div>$100</div></td>
+              <td>$100</td>
+              <td>1</td>
               <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
-              <td><div>$100</div></td>
+              <td>$100</td>
+              <td>1</td>
               <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
-              <td><div>$100</div></td>
+              <td>$100</td>
+              <td>1</td>
               <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
-              <td><div>$100</div></td>
+              <td>$100</td>
+              <td>1</td>
               <td><strong>$100</strong></td>
             </tr>
             <tr>
               <td className="flex"><strong>POLESTAR 1</strong></td>
-              <td><div>$100</div></td>
+              <td>$100</td>
+              <td>1</td>
               <td><strong>$100</strong></td>
             </tr>
             <tr>
+              <td></td>
               <td></td>
               <td></td>
               <td><CartPaymentWrapper> PAYMENT </CartPaymentWrapper></td>
