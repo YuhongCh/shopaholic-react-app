@@ -47,7 +47,7 @@ export const HeaderWrapper = styled.header`
       z-index: 99;
       opacity: 0.97;
       transition: 0.5s linear;
-      margin-left: -50px;
+      margin-left: -40px;
       margin-bottom: 20px;
     }
     .menu, .close{
