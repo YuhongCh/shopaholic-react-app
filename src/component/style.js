@@ -35,7 +35,7 @@ export const HeaderWrapper = styled.header`
   @media (max-width: 1000px){
     ul{
       position: fixed;
-      top:-120%;
+      top:-140%;
       left: -30px;
       width: 100%;
       height: 110vh;
@@ -47,6 +47,7 @@ export const HeaderWrapper = styled.header`
       z-index: 99;
       opacity: 0.97;
       transition: 0.5s linear;
+      background: red;
     }
     .menu, .close{
       display: block;
