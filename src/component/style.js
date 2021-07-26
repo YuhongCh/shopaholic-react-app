@@ -334,7 +334,7 @@ export const CheckoutButtonLink = styled(Link)`
 
 export const CheckoutHeaderWrapper = styled.div`
   ul {
-    margin-left: 30px;
+    margin-left: 20px;
   }
   
   .menu {
