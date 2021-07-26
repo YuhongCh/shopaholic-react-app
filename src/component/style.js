@@ -39,7 +39,7 @@ export const HeaderWrapper = styled.header`
       width: 100%;
       height: 100vh;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
       background: white;
@@ -55,7 +55,8 @@ export const HeaderWrapper = styled.header`
       position: relative;
     }
     ul.toggle{
-      left: 0;
+      left: -30px;
+      margin-top: -30px;
     }
   }
 `
@@ -67,7 +68,7 @@ export const HeaderLogoLink = styled(Link)`
   text-transform: uppercase;
   color: black;
   display: block;
-  padding-left: 40px;
+  padding-left: 30px;
 `
 
 export const HeaderNavWrapper = styled.nav`
@@ -87,6 +88,11 @@ export const HeaderNavWrapper = styled.nav`
     list-style: none;
     display: inline-block;
   }
+`
+
+export const HeaderCloseImageWrapper = styled.img`
+  margin-top: -50px;
+  padding-top: -50px;
 `
 
 // style for home page

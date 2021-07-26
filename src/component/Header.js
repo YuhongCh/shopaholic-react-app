@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import menuSvg from "../svg/menu.svg";
 import cartPng from "../svg/cart.png";
 import closeSvg from "../svg/close.svg";
-import {HeaderLogoLink, HeaderWrapper, HeaderNavWrapper, CartImageWrapper} from "./style";
+import {HeaderLogoLink, HeaderWrapper, HeaderNavWrapper, CartImageWrapper, HeaderCloseImageWrapper} from "./style";
 import { Redirect } from "react-router-dom";
 import SignoutAlert from "./SignoutAlert";
 
@@ -42,12 +42,13 @@ export class Header extends Component {
         <HeaderNavWrapper>
           <ul className={toggle ? "toggle" : ""}>
             <li><Link to="/product">Home</Link></li>
-            <li><Link to="/product">Product</Link></li>
             <li><Link to="/product">Contact</Link></li>
             <li><Link to="/product">About</Link></li>
-            <li><SignoutAlert setLogout={this.setLogout}/></li>
+            <li>
+              <SignoutAlert setLogout={this.setLogout}/>
+            </li>
             <li className="close" onClick={this.menuToggle}>
-              <img src={closeSvg} alt="" width="20"/>
+              <HeaderCloseImageWrapper src={closeSvg} alt="" width="20"/>
             </li>
           </ul>
         </HeaderNavWrapper>
