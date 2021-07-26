@@ -36,7 +36,7 @@ export const HeaderWrapper = styled.header`
     ul{
       position: fixed;
       top:-120%;
-      left: 0;
+      left: -30px;
       width: 100%;
       height: 110vh;
       display: flex;
@@ -333,7 +333,7 @@ export const CheckoutButtonLink = styled(Link)`
 
 export const CheckoutHeaderWrapper = styled.div`
   ul {
-    margin-left: 0;
+    margin-left: 30px;
   }
   
   .menu {
