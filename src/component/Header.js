@@ -52,7 +52,7 @@ export class Header extends Component {
           </ul>
         </HeaderNavWrapper>
         <Link to="/cart">
-          <img className="hello" src={cartPng} alt="" width="21" />
+          <img className="cartLogo" src={cartPng} alt="" width="21" />
         </Link>
       </HeaderWrapper>
     )

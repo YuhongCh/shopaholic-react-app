@@ -24,7 +24,7 @@ export const HeaderWrapper = styled.header`
     display: none;
   }
 
-  .hello {
+  .cartLogo {
     display: inline-block;
     padding: 10px 10px 15px 15px;
     height: 20px;
@@ -67,7 +67,7 @@ export const HeaderLogoLink = styled(Link)`
   text-transform: uppercase;
   color: black;
   display: block;
-  padding-left: 30px;
+  padding-left: 70px;
 `
 
 export const HeaderNavWrapper = styled.nav`
@@ -207,7 +207,7 @@ export const DetailButtonWrapper = styled.button`
   color: white;
   text-decoration: none;
   padding: 10px 35px;
-  margin-top: 30px;
+  margin-top: 10px;
   display: inline-block;
   font-family: 'Georgia', sans-serif;
 `
@@ -224,4 +224,93 @@ export const DetailTextWrapper = styled.div`
 export const AlertTextWrapper = styled.div`
   font-family: '.AppleSystemUIFont', sans-serif;
   -webkit-font-smoothing: antialiased;
+`
+
+export const CountDownTextWrapper = styled.div`
+  box-sizing: border-box;
+  font-family: 'Georgia', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  margin: 10px 0;
+  font-weight: bold;
+`
+
+// style for shopping card
+export const CartTitleHeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  align-items: baseline;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+`
+
+export const CartTitleWrapper = styled.span`
+  font-size: 50px;
+  opacity: .8;
+  margin-right: 15px;
+  margin-outside: 10px;
+`
+
+export const CartPaymentWrapper = styled.button`
+  background: #333;
+  color: white;
+  text-decoration: none;
+  padding: 10px 35px;
+  font-family: 'Georgia', sans-serif;
+  alignment: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 570px;
+`
+
+export const CardTableWrapper = styled.div`
+  display: block;
+  box-sizing: border-box;
+  font-family: 'Georgia', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 -20px;
+  
+  table thead tr {
+    margin-left: 20px;
+  }
+  thead th {
+    padding: 20px;
+  }
+  thead {
+    background: #f0f3f5;
+    width: 100%;
+  }
+  table {
+    width: 90%;
+    min-width: 700px;
+    color: rgba(0,0,0,.815);
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,.418);
+    margin-bottom: 25px;
+    border-radius: 8px;
+    padding: 0;
+    border-collapse: collapse;
+  }
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  
+  tbody tr td {
+    border-bottom: 1px solid hsla(0,0%,50.2%,.123);
+    padding: 20px;
+    text-align: center;
+  }
+  tbody tr td img{
+    height: 63px;
+    width: 63px;
+    margin: 0 10px 0 0 ;
+  }
+  tbody tr td div{
+    box-sizing: border-box;
+    border-collapse: collapse;
+  }
 `

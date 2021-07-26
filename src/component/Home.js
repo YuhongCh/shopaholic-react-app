@@ -56,8 +56,8 @@ function ProductList({products}) {
         <CardImageWrapper src={background} alt=""/>
         <CardInfoWrapper>
           <CardTitleLinkWrapper to="/product/detail">{product.title}</CardTitleLinkWrapper>
-          <CardTextWrapper>${product.price}</CardTextWrapper>
-          <CardTextWrapper>{product.description}</CardTextWrapper>
+          <CardTextWrapper>Price: $10000</CardTextWrapper>
+          <CardTextWrapper>Sales: ${product.price}</CardTextWrapper>
         </CardInfoWrapper>
         <CardDetailLinkWrapper to="/product/detail"> SEE DETAIL </CardDetailLinkWrapper>
       </CardWrapper>

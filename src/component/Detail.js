@@ -8,10 +8,11 @@ import {
   SectionWrapper,
   DetailTextWrapper,
   DetailTitleWrapper,
-  DetailButtonWrapper
+  DetailButtonWrapper, CountDownTextWrapper
 } from "./style";
 import {Redirect} from "react-router";
 import Header from "./Header";
+import Countdown from 'react-countdown';
 
 export default function Detail () {
 
@@ -37,12 +38,48 @@ export default function Detail () {
             <DetailImageWrapper src={background} alt=""/>
             <DetailInfoWrapper>
               <DetailTitleWrapper>{state.title}</DetailTitleWrapper>
-              <DetailTextWrapper>{state.introduction}</DetailTextWrapper>
               <DetailTextWrapper>{state.description}</DetailTextWrapper>
-              <DetailButtonWrapper onClick={() => alert("not available yet")}>SHOPAHOLIC</DetailButtonWrapper>
+              <DetailTextWrapper>price: 0.01 / 100.01 </DetailTextWrapper>
+              <DetailTextWrapper> stock: 5 </DetailTextWrapper>
+              <CountDownTextWrapper>
+              <Countdown
+                date={Date.now() + 5000}
+                renderer={renderer}
+                intervalDelay={0}
+                precision={3}
+              >
+              </Countdown>
+              </CountDownTextWrapper>
             </DetailInfoWrapper>
           </ProductDetailWrapper>
         </SectionWrapper>
       </div>
     )
 }
+
+const renderer = ({ hours, minutes, seconds, completed, total }) => {
+  if (completed) {
+    // Render a completed state
+    return  (
+      <div>
+        <CountDownTextWrapper>shopaholic is now open!!!</CountDownTextWrapper>
+        <DetailButtonWrapper onClick={() => alert("success")}>
+          SHOPAHOLIC
+        </DetailButtonWrapper>
+      </div>
+   )
+  } else {
+    // Render a countdown
+    return (
+      <div>
+        <CountDownTextWrapper>
+          <span>sales start in (millisecond) : {total}</span>
+        </CountDownTextWrapper>
+        <DetailButtonWrapper disabled={true}>
+          NOT AVAILABLE
+        </DetailButtonWrapper>
+      </div>
+      )
+  }
+};
+

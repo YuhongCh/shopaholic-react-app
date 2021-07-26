@@ -3,12 +3,14 @@ import SignUp from "./SignUp";
 import Detail from "./Detail";
 import Home from "./Home";
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Header from "./Header";
+import {BrowserRouter} from "react-router-dom";
+import Cart from "./Cart";
 
 
 function App() {
 
   return (
+    <BrowserRouter>
         <Switch>
           <Route path="/signin" exact>
             <SignIn/>
@@ -25,10 +27,14 @@ function App() {
           <Route path="/product/detail" exact>
             <Detail />
           </Route>
+          <Route path="/cart" exact>
+            <Cart />
+          </Route>
           <Route path="/">
             <Home/>
           </Route>
         </Switch>
+      </BrowserRouter>
   );
 }
 
