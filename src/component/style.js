@@ -255,6 +255,7 @@ export const CartTitleWrapper = styled.span`
   font-size: 50px;
   opacity: .8;
   margin-right: 15px;
+  margin-left: 20px;
   margin-outside: 10px;
 `
 
@@ -279,7 +280,8 @@ export const CardTableWrapper = styled.div`
     margin-left: 20px;
   }
   thead th {
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   thead {
     background: #f0f3f5;
@@ -307,11 +309,6 @@ export const CardTableWrapper = styled.div`
     border-bottom: 1px solid hsla(0,0%,50.2%,.123);
     padding: 20px;
     text-align: center;
-  }
-  tbody tr td img{
-    height: 63px;
-    width: 63px;
-    margin: 0 10px 0 0 ;
   }
   tbody tr td div{
     box-sizing: border-box;
