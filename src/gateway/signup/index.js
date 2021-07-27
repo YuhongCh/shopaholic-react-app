@@ -9,7 +9,7 @@ import Container from '@material-ui/core/Container';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 
 function Copyright() {
   return (
@@ -45,15 +45,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function Signup() {
   const classes = useStyles();
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline />
+      <CssBaseline/>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <PersonOutlineIcon />
+          <PersonOutlineIcon/>
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign up
@@ -126,7 +126,7 @@ export default function SignUp() {
         </form>
       </div>
       <Box mt={5}>
-        <Copyright />
+        <Copyright/>
       </Box>
     </Container>
   );

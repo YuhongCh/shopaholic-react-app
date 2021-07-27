@@ -5,29 +5,28 @@ import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import axios from "axios";
 import StoreIcon from '@material-ui/icons/Store';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
-import { useState} from "react";
-import { Redirect } from 'react-router-dom';
+import {makeStyles} from '@material-ui/core/styles';
+import {useState} from "react";
+import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import background from "../static/background.jpg";
+import background from "../../static/cover.jpg";
 import useToken from "../hook/useToken";
 
 async function loginUser(credentials) {
   return "true";
   /**
-  return await axios.post('http://localhost:8080/signin', credentials)
-    .then(response => response.data.code === 0 ? response.data.data.value : null);
+   return await axios.post('http://localhost:8080/signin', credentials)
+   .then(response => response.data.code === 0 ? response.data.data.value : null);
    */
 }
 
-export default function SignIn() {
+export default function Signin() {
 
-  const { token, setToken } = useToken();
+  const {setToken} = useToken();
 
   const [phone, setPhone] = useState(null);
   const [password, setPassword] = useState(null);
@@ -48,13 +47,13 @@ export default function SignIn() {
   const classes = useStyles();
 
   if (login) {
-    return <Redirect to="/" />;
+    return <Redirect to="/"/>;
   }
 
   return (
     <Grid container component="main" className={classes.root}>
-      <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+      <CssBaseline/>
+      <Grid item xs={false} sm={4} md={7} className={classes.image}/>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar
@@ -115,7 +114,7 @@ export default function SignIn() {
               </Grid>
             </Grid>
             <Box mt={5}>
-              <Copyright />
+              <Copyright/>
             </Box>
           </form>
         </div>
@@ -157,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor : "#455a64"
+    backgroundColor: "#455a64"
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -169,7 +168,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-SignIn.prototype = {
-  setToken : PropTypes.func.isRequired
+Signin.prototype = {
+  setToken: PropTypes.func.isRequired
 }
 

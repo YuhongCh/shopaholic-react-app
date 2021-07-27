@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 //general layout for shopaholic
 export const SectionWrapper = styled.section`
@@ -18,8 +18,8 @@ export const HeaderWrapper = styled.header`
   justify-content: space-around;
   align-items: center;
   overflow: hidden;
-  
-  .menu, .close{
+
+  .menu, .close {
     cursor: pointer;
     display: none;
   }
@@ -31,10 +31,10 @@ export const HeaderWrapper = styled.header`
     margin-left: -50px;
   }
 
-  @media (max-width: 1000px){
-    ul{
+  @media (max-width: 1000px) {
+    ul {
       position: absolute;
-      top:-140%;
+      top: -140%;
       left: -60px;
       width: 110%;
       height: 90vh;
@@ -49,13 +49,16 @@ export const HeaderWrapper = styled.header`
       padding-top: -40px;
       margin-bottom: 30px;
     }
-    .menu, .close{
+
+    .menu, .close {
       display: block;
     }
-    .close{
+
+    .close {
       position: relative;
     }
-    ul.toggle{
+
+    ul.toggle {
       top: 0;
       margin-top: -10px;
     }
@@ -75,17 +78,19 @@ export const HeaderLogoLink = styled(Link)`
 export const HeaderNavWrapper = styled.nav`
   display: flex;
   padding-right: -100px;
-  
-  ul li a:hover{
+
+  ul li a:hover {
     color: darkgray;
   }
-  ul li a{
+
+  ul li a {
     text-decoration: none;
     text-transform: uppercase;
     color: #555;
     padding: 0 15px;
   }
-  ul li{
+
+  ul li {
     list-style: none;
     display: inline-block;
   }
@@ -103,7 +108,7 @@ export const ProductListWrapper = styled.div`
   justify-content: space-evenly;
   align-content: flex-start;
   flex-wrap: wrap;
-  
+
 `
 
 export const CardWrapper = styled.div`
@@ -123,11 +128,13 @@ export const CardWrapper = styled.div`
 export const CardInfoWrapper = styled.div`
   margin: 10px 15px;
   text-decoration: none;
-  a{
+
+  a {
     text-decoration: none;
     color: #333;
   }
-  a:hover{
+
+  a:hover {
     color: darkblue;
   }
 `
@@ -155,7 +162,7 @@ export const CardTitleLinkWrapper = styled(Link)`
   font-weight: bold;
   margin-bottom: 10px;
   margin-top: -5px;
-  font-family:  'Segoe UI',serif;
+  font-family: 'Segoe UI', serif;
   display: inline-block;
   -webkit-font-smoothing: antialiased;
 `
@@ -205,7 +212,7 @@ export const DetailTitleWrapper = styled.div`
   margin-block-end: 0.83em;
   font-weight: bold;
   box-sizing: border-box;
-  font-family:  'Segoe UI',serif;
+  font-family: 'Segoe UI', serif;
   letter-spacing: 1px;
 `
 
@@ -277,46 +284,51 @@ export const CartTableWrapper = styled.div`
   font-family: 'Georgia', sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0 -20px;
-  
+
   .broader {
     padding-left: 20px;
   }
-  
+
   table thead tr {
     margin-left: 20px;
   }
+
   thead th {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+
   thead {
     background: #f0f3f5;
     width: 100%;
   }
+
   table {
     width: 90%;
     min-width: 400px;
-    color: rgba(0,0,0,.815);
+    color: rgba(0, 0, 0, .815);
     margin-right: auto;
     margin-left: auto;
-    box-shadow: 0 1px 3px rgba(0,0,0,.418);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .418);
     margin-bottom: 25px;
     border-radius: 8px;
     padding: 0;
     border-collapse: collapse;
   }
+
   tbody {
     display: table-row-group;
     vertical-align: middle;
     border-color: inherit;
   }
-  
+
   tbody tr td {
-    border-bottom: 1px solid hsla(0,0%,50.2%,.123);
+    border-bottom: 1px solid hsla(0, 0%, 50.2%, .123);
     padding: 20px;
     text-align: center;
   }
-  tbody tr td div{
+
+  tbody tr td div {
     box-sizing: border-box;
     border-collapse: collapse;
   }
@@ -336,7 +348,7 @@ export const CheckoutHeaderWrapper = styled.div`
   ul {
     margin-left: 20px;
   }
-  
+
   .menu {
     margin-left: -10px;
     margin-right: -50px;

@@ -1,24 +1,12 @@
-import * as actionTypes from './actionTypes';
-import { fromJS } from "immutable";
+import {homeReducer} from "../home/store";
+import {detailReducer} from "../detail/store";
+import {cartReducer} from "../cart/store";
+import {combineReducers} from "redux-immutable";
 
-const defaultState = fromJS({
-  productList: [],
-  shoppingCartList: [],
-  orderHistory: [],
-  cookie: null
+const reducer = combineReducers({
+  home: homeReducer,
+  detail: detailReducer,
+  cart: cartReducer
 })
 
-function applicationReducer (state = defaultState, action) {
-  switch(action.type) {
-    case actionTypes.EXAMPLE_TYPE :
-      return state.merge({
-        topicList: fromJS(action.topicList),
-        articleList: fromJS(action.articleList),
-        recommendList: fromJS(action.recommendList)
-      })
-    default :
-      return state;
-  }
-}
-
-export default applicationReducer;
+export default reducer;

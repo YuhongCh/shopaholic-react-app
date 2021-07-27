@@ -1,0 +1,1 @@
+export const GET_CHECKOUT_DATA = 'cart/GET_CHECKOUT_DATA';
