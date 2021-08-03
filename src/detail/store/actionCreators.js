@@ -14,7 +14,9 @@ export const getDetail = () => {
       "javascript and jquery tutorials and related so on.",
     price: "100.00",
     sales: "0.01",
-    stock: "6"
+    stock: "6",
+    startTime: 2627368586078,
+    endTime: 1727368586078
   }
 
   return (dispatch) => {

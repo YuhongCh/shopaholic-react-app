@@ -32,7 +32,6 @@ const Detail = (props) => {
   }
 
   const productDetail = props.productDetail.toJS();
-
   return (
     <div>
       <Header/>
@@ -48,7 +47,7 @@ const Detail = (props) => {
             <DetailTextWrapper> stock: {productDetail.stock} </DetailTextWrapper>
             <CountDownTextWrapper>
               <Countdown
-                date={Date.now() + 5000}
+                date={new Date(productDetail.startTime)}
                 renderer={renderer}
                 intervalDelay={0}
                 precision={3}
@@ -72,11 +71,26 @@ const renderer = ({hours, minutes, seconds, completed, total}) => {
         </DetailButtonWrapper>
       </div>
     )
+  } else if (total > 100000) {
+    const hourString = hours > 1 ? "hours" : "hour";
+    const minuteString = minutes > 1 ? "minutes" : "minute";
+    const secondString = seconds > 1 ? "seconds" : "second";
+    return (
+      <div>
+        <CountDownTextWrapper>
+          <span>sales start in {hours} {hourString} {minutes} {minuteString} {seconds} {secondString}</span>
+        </CountDownTextWrapper>
+        <DetailButtonWrapper disabled={true}>
+          NOT AVAILABLE
+        </DetailButtonWrapper>
+      </div>
+
+    );
   } else { // Render a countdown
     return (
       <div>
         <CountDownTextWrapper>
-          <span>sales start in (millisecond) : {total}</span>
+          <span>sales start soon: {total}</span>
         </CountDownTextWrapper>
         <DetailButtonWrapper disabled={true}>
           NOT AVAILABLE

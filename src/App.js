@@ -6,26 +6,29 @@ import Home from "./home";
 import {Route} from 'react-router-dom';
 import {BrowserRouter} from "react-router-dom";
 import Cart from "./cart";
-import {Redirect} from "react-router";
+import {Redirect,Switch} from "react-router";
 
 function App() {
 
-  const RedirectHome = () => {
-    return (<Redirect to="/"/>)
-  }
-
   return (
     <BrowserRouter>
-      <Route path='/' exact component={Home}/>
-      <Route path='/' component={RedirectHome}/>
-      <Route path='/signin' exact component={Signin}/>
-      <Route path='/signup' exact component={Signup}/>
-      <Route path='/product' exact component={Home}/>
-      <Route path='/product/detail/' exact component={Detail}/>
-      <Route path='/cart' exact component={Cart}/>
-      <Route path='/checkout' exact component={Checkout}/>
+      <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path='/home' component={Home}/>
+      <Route exact path='/signin' component={Signin}/>
+      <Route exact path='/signup' component={Signup}/>
+      <Route exact path='/product' component={Home}/>
+      <Route exact path='/product/detail' component={Detail}/>
+      <Route exact path='/cart' component={Cart}/>
+      <Route exact path='/checkout' component={Checkout}/>
+      <Route component={RedirectHome} />
+      </Switch>
     </BrowserRouter>
   )
+}
+
+const RedirectHome = () => {
+  return (<Redirect to="/home"/>)
 }
 
 export default App;

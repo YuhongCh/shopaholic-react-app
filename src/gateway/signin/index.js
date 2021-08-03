@@ -15,13 +15,11 @@ import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import background from "../../static/cover.jpg";
 import useToken from "../hook/useToken";
+import axios from "axios";
 
 async function loginUser(credentials) {
-  return "true";
-  /**
    return await axios.post('http://localhost:8080/signin', credentials)
    .then(response => response.data.code === 0 ? response.data.data.value : null);
-   */
 }
 
 export default function Signin() {
@@ -47,7 +45,7 @@ export default function Signin() {
   const classes = useStyles();
 
   if (login) {
-    return <Redirect to="/"/>;
+    return <Redirect to="/home"/>;
   }
 
   return (
