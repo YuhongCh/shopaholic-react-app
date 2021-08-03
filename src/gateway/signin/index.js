@@ -18,8 +18,11 @@ import useToken from "../hook/useToken";
 import axios from "axios";
 
 async function loginUser(credentials) {
+  return ("token");
+  /**
    return await axios.post('http://localhost:8080/signin', credentials)
    .then(response => response.data.code === 0 ? response.data.data.value : null);
+   **/
 }
 
 export default function Signin() {
