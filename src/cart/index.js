@@ -9,19 +9,28 @@ import {
 } from "../style";
 import {connect} from "react-redux";
 import * as actionCreators from "../cart/store/actionCreators";
+import useToken from "../gateway/hook/useToken";
 
 const Cart = (props) => {
 
+  const {token} = useToken();
   const [mount, setMount] = useState(false);
 
   useEffect(() => {
     if (!mount) {
-      props.getCheckoutListData();
+      props.getCheckoutListData(token);
       setMount(true);
     }
-  }, [mount, props]);
+  }, [mount, props, token]);
 
   const checkoutList = props.checkoutList.toJS();
+  const list = checkoutList.data;
+
+  if (list == null) {
+    return <div>
+
+    </div>
+  }
 
   return (
     <div>
@@ -30,13 +39,13 @@ const Cart = (props) => {
         <CartTitleHeaderWrapper>
           <div>
             <CartTitleWrapper>Your Cart</CartTitleWrapper>
-            <span> {checkoutList.length} items</span>
+            <span> {list.length} items</span>
           </div>
         </CartTitleHeaderWrapper>
         <CartTableWrapper>
           <table>
             <CheckoutListHead/>
-            <CheckoutListBody checkoutList={checkoutList}/>
+            <CheckoutListBody checkoutList={list}/>
           </table>
         </CartTableWrapper>
       </SectionWrapper>
@@ -50,10 +59,10 @@ const CheckoutListBody = ({checkoutList}) => {
     <tbody>
     {
       checkoutList.map(item => (
-        <tr>
-          <td className="flex"><strong>{item.name} </strong></td>
+        <tr key={item.productName}>
+          <td className="flex"><strong>{item.productName} </strong></td>
           <td>${item.price}</td>
-          <td>{item.quantity}</td>
+          <td>{item.count}</td>
         </tr>
       ))
     }
@@ -85,8 +94,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatch = (dispatch) => ({
-  getCheckoutListData() {
-    const action = actionCreators.getCheckoutList();
+  getCheckoutListData(cookie) {
+    const action = actionCreators.getCheckoutList(cookie);
     dispatch(action);
   }
 })

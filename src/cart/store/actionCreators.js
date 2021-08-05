@@ -1,49 +1,21 @@
 import * as actionTypes from './actionTypes';
+import axios from "axios";
 
 const getCheckoutListData = (result) => ({
   type: actionTypes.GET_CHECKOUT_DATA,
   checkoutList: result
 })
 
-export const getCheckoutList = () => {
-  const data = [
-    {
-      name: "POLESTAR 911S",
-      price: 100,
-      quantity: 1
-    },
-    {
-      name: "POLESTAR 911S",
-      price: 100,
-      quantity: 1
-    },
-    {
-      name: "POLESTAR 911S",
-      price: 100,
-      quantity: 1
-    },
-    {
-      name: "POLESTAR 911S",
-      price: 100,
-      quantity: 1
-    },
-    {
-      name: "POLESTAR 911S",
-      price: 100,
-      quantity: 1
-    }
-  ]
+export const getCheckoutList = (cookie) => {
 
   return (dispatch) => {
-    dispatch(getCheckoutListData(data));
-  }
+    axios({
+      method: 'post',
+      url: 'http://localhost:8080/cart/all',
+      data: {
+        cookie : cookie
+      }
+    }).then(res => dispatch(getCheckoutListData(res.data)))
+      .catch(err => console.log(err))};
 
-  /**
-   return (dispatch) => {
-    axios.get('http://localhost:8080/cart/:id')
-      .then((res) => {
-        dispatch(getDetailData(res.data));
-      })
-  }
-   **/
 }
