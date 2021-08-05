@@ -40,6 +40,10 @@ const Home = (props) => {
 }
 
 const ProductList = ({products}) => {
+
+  const [url, setUrl] = useState('/product/');
+
+
   return (
     products.map(product => (
       <CardWrapper key={product.productId}>
@@ -50,7 +54,10 @@ const ProductList = ({products}) => {
           <CardTextWrapper>Sales: ${product.productDiscount}</CardTextWrapper>
           <CardTextWrapper>{product.productTitle}</CardTextWrapper>
         </CardInfoWrapper>
-        <CardDetailLinkWrapper to="/product/1001" > SEE DETAIL </CardDetailLinkWrapper>
+        <CardDetailLinkWrapper
+          onClick={() => setUrl(url + product.productId)}
+          to={url}
+        > SEE DETAIL </CardDetailLinkWrapper>
       </CardWrapper>
     ))
   )
