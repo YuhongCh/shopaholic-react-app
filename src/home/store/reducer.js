@@ -8,7 +8,7 @@ const defaultState = fromJS({
 function homeReducer(state = defaultState, action) {
   switch (action.type) {
     case actionTypes.GET_HOME_DATA :
-      return state.set('productList', fromJS(action.productList));
+      return state.set('productList', fromJS(action.productList.data));
     default :
       return state;
   }

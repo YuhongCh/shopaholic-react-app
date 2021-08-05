@@ -193,10 +193,10 @@ export const ProductDetailWrapper = styled.div`
 export const DetailImageWrapper = styled.img`
   max-width: 500px;
   min-width: 290px;
-  height: 300px;
+  height: 320px;
   display: block;
   object-fit: cover;
-  margin: 25px;
+  margin: 25px 25px 40px 0;
 `
 
 export const DetailInfoWrapper = styled.div`

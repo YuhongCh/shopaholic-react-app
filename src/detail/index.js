@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import background from "../static/cover.jpg"
 import useToken from "../gateway/hook/useToken";
 import {
   DetailInfoWrapper,
@@ -23,31 +22,36 @@ const Detail = (props) => {
 
   useEffect(() => {
     if (!mount) {
-      props.getDetailData();
+      props.getDetailData(props.match.params, token);
       setMount(true);
     }
-  }, [mount, props]);
+  }, [mount, props, token]);
   if (token === null) {
     return <Redirect to="/signin"/>;
   }
 
-  const productDetail = props.productDetail.toJS();
+  const product = props.productDetail.toJS();
+
+  if (product == null) {
+    return <div></div>
+  }
+
   return (
     <div>
       <Header/>
       <SectionWrapper>
         <ProductDetailWrapper>
-          <DetailImageWrapper src={background} alt=""/>
+          <DetailImageWrapper src={product.productImg} alt=""/>
           <DetailInfoWrapper>
-            <DetailTitleWrapper>{productDetail.title}</DetailTitleWrapper>
-            <DetailTextWrapper>{productDetail.description}</DetailTextWrapper>
+            <DetailTitleWrapper>{product.productName}</DetailTitleWrapper>
+            <DetailTextWrapper>{product.productDetail}</DetailTextWrapper>
             <DetailTextWrapper>
-              price: {productDetail.sales} / {productDetail.price}
+              price: {product.productDiscount} / {product.productPrice}
             </DetailTextWrapper>
-            <DetailTextWrapper> stock: {productDetail.stock} </DetailTextWrapper>
+            <DetailTextWrapper> stock: {product.productStock} </DetailTextWrapper>
             <CountDownTextWrapper>
               <Countdown
-                date={new Date(productDetail.startTime)}
+                date={new Date(product.startDate)}
                 renderer={renderer}
                 intervalDelay={0}
                 precision={3}
@@ -61,7 +65,7 @@ const Detail = (props) => {
   )
 }
 
-const renderer = ({hours, minutes, seconds, completed, total}) => {
+const renderer = ({days, hours, minutes, seconds, completed, total}) => {
   if (completed) { // Render a completed state
     return (
       <div>
@@ -75,10 +79,11 @@ const renderer = ({hours, minutes, seconds, completed, total}) => {
     const hourString = hours > 1 ? "hours" : "hour";
     const minuteString = minutes > 1 ? "minutes" : "minute";
     const secondString = seconds > 1 ? "seconds" : "second";
+    const dayString = days > 1 ? "days" : "day";
     return (
       <div>
         <CountDownTextWrapper>
-          <span>sales start in {hours} {hourString} {minutes} {minuteString} {seconds} {secondString}</span>
+          <span>sales start in {days} {dayString} {hours} {hourString} {minutes} {minuteString} {seconds} {secondString}</span>
         </CountDownTextWrapper>
         <DetailButtonWrapper disabled={true}>
           NOT AVAILABLE
@@ -107,8 +112,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatch = (dispatch) => ({
-  getDetailData() {
-    const action = actionCreators.getDetail();
+  getDetailData(productId, cookie) {
+    const action = actionCreators.getDetail(productId, cookie);
     dispatch(action);
   }
 })

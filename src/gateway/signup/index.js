@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
@@ -10,6 +10,8 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import {makeStyles} from '@material-ui/core/styles';
+import axios from "axios";
+import {Redirect} from "react-router-dom";
 
 function Copyright() {
   return (
@@ -45,8 +47,49 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+async function registerUser(credentials) {
+
+  return await axios({
+    method: 'post',
+    url: 'http://localhost:8080/user/signup',
+    data: {
+      lastName: credentials.lastName,
+      firstName: credentials.firstName,
+      uid: credentials.phone,
+      password: credentials.password
+    }
+  })
+    .then(response => response.data.code === 0 ? response.data.code : response.data)
+    .catch(error => error);
+
+}
+
 export default function Signup() {
   const classes = useStyles();
+
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [phone, setPhone] = useState(false);
+  const [password, setPassword] = useState(null);
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const code = await registerUser({
+      firstName,
+      lastName,
+      phone,
+      password
+    });
+
+    if (code === 0) {
+      alert("success, here you go!")
+      return <Redirect to="/signin"/>;
+    }
+    else {
+      alert("oops, something went wrong...")
+    }
+
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -58,7 +101,9 @@ export default function Signup() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate
+              onSubmit={e => handleSubmit(e)}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -70,6 +115,7 @@ export default function Signup() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                onChange={e => setFirstName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -81,6 +127,7 @@ export default function Signup() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onChange={e => setLastName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -92,6 +139,7 @@ export default function Signup() {
                 label="Phone Number"
                 name="phone"
                 autoComplete="phone number"
+                onChange={e => setPhone(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -104,6 +152,7 @@ export default function Signup() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={e => setPassword(e.target.value)}
               />
             </Grid>
           </Grid>

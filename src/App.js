@@ -18,7 +18,7 @@ function App() {
       <Route exact path='/signin' component={Signin}/>
       <Route exact path='/signup' component={Signup}/>
       <Route exact path='/product' component={Home}/>
-      <Route exact path='/product/detail' component={Detail}/>
+      <Route exact path='/product/:id' component={Detail}/>
       <Route exact path='/cart' component={Cart}/>
       <Route exact path='/checkout' component={Checkout}/>
       <Route component={RedirectHome} />

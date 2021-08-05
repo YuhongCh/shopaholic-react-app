@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import StoreIcon from '@material-ui/icons/Store';
+import axios from "axios";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
@@ -15,14 +16,18 @@ import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import background from "../../static/cover.jpg";
 import useToken from "../hook/useToken";
-import axios from "axios";
 
 async function loginUser(credentials) {
-  return ("token");
-  /**
-   return await axios.post('http://localhost:8080/signin', credentials)
-   .then(response => response.data.code === 0 ? response.data.data.value : null);
-   **/
+
+  return await axios({
+    method: 'post',
+    url: 'http://localhost:8080/user/signin',
+    data: {
+      uid: credentials.phone,
+      password: credentials.password
+    }
+  }).then(response => response.data.code === 0 ? response.data.data.cookie : null);
+
 }
 
 export default function Signin() {
@@ -39,6 +44,7 @@ export default function Signin() {
       phone,
       password
     });
+
     if (token) {
       setToken(token);
       setLogin(true);

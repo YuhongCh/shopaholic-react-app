@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import background from "../static/cover.jpg";
 import useToken from "../gateway/hook/useToken";
 import {Redirect} from "react-router";
 import Header from "../header/index";
@@ -18,10 +17,10 @@ const Home = (props) => {
 
   useEffect(() => {
     if (!mount) {
-      props.getHomeData();
+      props.getHomeData(token);
       setMount(true);
     }
-  }, [mount, props]);
+  }, [mount, props, token]);
 
   if (token === null) {
     return <Redirect to="/signin"/>;
@@ -43,14 +42,15 @@ const Home = (props) => {
 const ProductList = ({products}) => {
   return (
     products.map(product => (
-      <CardWrapper key={product.id}>
-        <CardImageWrapper src={background} alt=""/>
+      <CardWrapper key={product.productId}>
+        <CardImageWrapper src={product.productImg} alt=""/>
         <CardInfoWrapper>
-          <CardTitleLinkWrapper to="/product/detail">{product.title}</CardTitleLinkWrapper>
-          <CardTextWrapper>Price: ${product.price}</CardTextWrapper>
-          <CardTextWrapper>Sales: ${product.description}</CardTextWrapper>
+          <CardTitleLinkWrapper to="/product/detail">{product.productName}</CardTitleLinkWrapper>
+          <CardTextWrapper>Price: ${product.productPrice}</CardTextWrapper>
+          <CardTextWrapper>Sales: ${product.productDiscount}</CardTextWrapper>
+          <CardTextWrapper>{product.productTitle}</CardTextWrapper>
         </CardInfoWrapper>
-        <CardDetailLinkWrapper to="/product/detail"> SEE DETAIL </CardDetailLinkWrapper>
+        <CardDetailLinkWrapper to="/product/1001" > SEE DETAIL </CardDetailLinkWrapper>
       </CardWrapper>
     ))
   )
@@ -63,8 +63,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatch = (dispatch) => ({
-  getHomeData() {
-    const action = actionCreators.getHome();
+  getHomeData(token) {
+    const action = actionCreators.getHome(token);
     dispatch(action);
   }
 })
