@@ -9,18 +9,37 @@ import {
   CardDetailLinkWrapper, CardTextWrapper, CardTitleLinkWrapper,
   SectionWrapper, ProductListWrapper,
 } from "../style";
+import axios from "axios";
+
+async function validate(token) {
+
+  return await axios({
+    method: 'post',
+    url: 'http://localhost:8080/user/validate',
+    data: {
+      cookie : token
+    }
+  }).then(response => response.data.code === 0)
+    .catch(error => null)
+
+}
 
 const Home = (props) => {
 
-  const {token} = useToken();
+  const {token, setToken} = useToken();
   const [mount, setMount] = useState(false);
 
   useEffect(() => {
     if (!mount) {
+      validate(token).then(function(response) {
+        if (!response) {
+          setToken(null);
+        }
+      })
       props.getHomeData(token);
       setMount(true);
     }
-  }, [mount, props, token]);
+  }, [mount, props, setToken, token]);
 
   if (token === null) {
     return <Redirect to="/signin"/>;

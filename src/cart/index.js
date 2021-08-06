@@ -10,21 +10,45 @@ import {
 import {connect} from "react-redux";
 import * as actionCreators from "../cart/store/actionCreators";
 import useToken from "../gateway/hook/useToken";
+import axios from "axios";
+import {Redirect} from "react-router-dom";
+
+async function validate(token) {
+
+  return await axios({
+    method: 'post',
+    url: 'http://localhost:8080/user/validate',
+    data: {
+      cookie : token
+    }
+  }).then(response => response.data.code === 0)
+    .catch(error => false)
+
+}
 
 const Cart = (props) => {
 
-  const {token} = useToken();
+  const {token, setToken} = useToken();
   const [mount, setMount] = useState(false);
 
   useEffect(() => {
     if (!mount) {
+      validate(token).then(function(response) {
+        if (!response) {
+          setToken(null);
+        }
+      })
       props.getCheckoutListData(token);
       setMount(true);
     }
-  }, [mount, props, token]);
+  }, [mount, props, setToken, token]);
 
   const checkoutList = props.checkoutList.toJS();
   const list = checkoutList.data;
+
+  if (token === null) {
+    return <Redirect to="/signin"/>;
+  }
 
   if (list == null) {
     return <div>

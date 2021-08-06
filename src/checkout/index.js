@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
@@ -13,10 +13,39 @@ import PaymentForm from './payment';
 import Review from './review';
 import Header from "../header";
 import {CheckoutButtonLink, CheckoutHeaderWrapper} from "../style";
+import axios from "axios";
+import useToken from "../gateway/hook/useToken";
+import {Redirect} from "react-router";
+
+async function validate(token) {
+
+  return await axios({
+    method: 'post',
+    url: 'http://localhost:8080/user/validate',
+    data: {
+      cookie : token
+    }
+  }).then(response => response.data.code === 0)
+    .catch(error => false)
+
+}
 
 export default function Checkout() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  const {token, setToken} = useToken();
+  const [mount, setMount] = useState(false);
+
+  useEffect(() => {
+    if (!mount) {
+      validate(token).then(function(response) {
+        if (!response) {
+          setToken(null);
+        }
+      })
+      setMount(true);
+    }
+  }, [mount, setToken, token]);
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -25,6 +54,10 @@ export default function Checkout() {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
+
+  if (token === null) {
+    return <Redirect to="/signin"/>;
+  }
 
   return (
     <React.Fragment>
