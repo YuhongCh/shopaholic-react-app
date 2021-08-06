@@ -1,6 +1,7 @@
 import Signin from "./gateway/signin";
 import Signup from "./gateway/signup";
 import Checkout from "./checkout";
+import Order from "./order";
 import Detail from "./detail";
 import Home from "./home";
 import {Route} from 'react-router-dom';
@@ -21,6 +22,7 @@ function App() {
       <Route exact path='/product/:id' component={Detail}/>
       <Route exact path='/cart' component={Cart}/>
       <Route exact path='/checkout' component={Checkout}/>
+        <Route exact path='/order' component={Order}/>
       <Route component={RedirectHome} />
       </Switch>
     </BrowserRouter>

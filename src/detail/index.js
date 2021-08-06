@@ -125,19 +125,6 @@ const renderer = ({days, hours, minutes, seconds, completed, total}) => {
   }
 };
 
-async function addToCart(credentials) {
-
-  return await axios({
-    method: 'post',
-    url: 'http://localhost:8080/user/signin',
-    data: {
-      uid: credentials.phone,
-      password: credentials.password
-    }
-  }).then(response => response.data.code === 0 ? response.data.data.cookie : null);
-
-}
-
 const mapStateToProps = (state) => {
   return {
     productDetail: state.getIn(['detail', 'productDetail'])
@@ -145,8 +132,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatch = (dispatch) => ({
-  getDetailData(productId, cookie) {
-    const action = actionCreators.getDetail(productId, cookie);
+  getDetailData(cookie) {
+    const action = actionCreators.getDetail(cookie);
     dispatch(action);
   }
 })

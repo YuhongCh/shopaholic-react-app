@@ -1,0 +1,1 @@
+export const GET_ORDER_DATA = 'order/GET_ORDER_DATA';

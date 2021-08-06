@@ -37,7 +37,7 @@ const Header = () => {
         <ul className={toggle ? "toggle" : ""}>
           <li><Link to="/product">Home</Link></li>
           <li><Link to="/product">Product</Link></li>
-          <li><Link to="/product">Contact</Link></li>
+          <li><Link to="/order">Order</Link></li>
           <li>
             <Index setLogout={logoutAndClearCookie}/>
           </li>

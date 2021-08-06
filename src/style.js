@@ -354,3 +354,49 @@ export const CheckoutHeaderWrapper = styled.div`
     margin-right: -50px;
   }
 `
+
+export const OrderTableWrapper = styled.div`
+  font-family: 'Georgia', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  box-sizing: border-box;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+
+  table {
+    color: rgba(0, 0, 0, .815);
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .418);
+    border-radius: 8px;
+  }
+
+  thead th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 60px;
+  }
+
+  thead {
+    background: #f0f3f5;
+    width: 100%;
+  }
+
+  tbody {
+    display: table-row-group;
+    border-color: inherit;
+  }
+
+  tbody tr td {
+    border-bottom: 1px solid hsla(0, 0%, 49%, .123);
+    padding: 20px 30px 20px 20px;
+    text-align: -moz-center;
+  }
+
+  tbody tr td div {
+    box-sizing: border-box;
+  }
+  
+  
+`
